@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">res.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="category_id" position="after"/>
+                    <field name="custom_attribute_line_ids" string="Custom Attribute" filter_domain="[ ('custom_attribute_line_ids.attribute_id.name', 'ilike', self)]"/>
+                    <!--<separator/>
+                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}" />
+                        <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                        <filter name="group_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    </group>-->
+                </search>
+            </field>
+        </record>
+
+
+
+    <record id="partner_form_inherit" model="ir.ui.view">
+        <field name="name">partner.attribute.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="custom_attribute" string="Custom Attribute">
+                            <field name="custom_attribute_line_ids" >
+                                <tree string="Variants" editable="bottom">
+                                    <field name="attribute_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                    <field name="value_ids" widget="many2many_tags" options="{'no_create_edit': True}" context="{'default_attribute_id': attribute_id, 'show_attribute': False}"/>
+                                </tree>
+                            </field>
+                        </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
