@@ -5183,8 +5183,8 @@ msgid ""
 " 10 with an existing carryover of 50 will create a new carryover line of "
 "-40, so that the total carryover becomes 10."
 msgstr ""
-"Definieert hoe deze rapportregel overdrachtsregels creëert bij het uitvoeren"
-" van de btw-afsluiting. Indien waar, worden de overgedragen bedragen altijd "
+"Definieert hoe deze rapportregel overdrachtsregels maakt bij het uitvoeren "
+"van de btw-afsluiting. Indien waar, worden de overgedragen bedragen altijd "
 "opgeteld bij elkaar: bijvoorbeeld een rapportregel met een saldo van 10 met "
 "een bestaande overdracht van 50 zal worden toegevoegd een extra 10 bij het "
 "doen van de afsluiting, waardoor een totale overdracht van 60 wordt gemaakt."
@@ -7975,7 +7975,7 @@ msgstr "Net gedaan"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_tax_adjustments_wizard__reason
 msgid "Justification"
-msgstr "Rechvaarding"
+msgstr "Verantwoording"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_journal__kanban_dashboard
@@ -8663,7 +8663,7 @@ msgstr "Matching #"
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model__matching_order
 #: model:ir.model.fields,field_description:account.field_account_reconcile_model_template__matching_order
 msgid "Matching Order"
-msgstr "Aflettervolgorder"
+msgstr "Aflettervolgorde"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move_line__matching_number
@@ -15742,7 +15742,7 @@ msgid ""
 " referenced trough this field"
 msgstr ""
 "Wanneer een interne overboeking wordt geboekt, wordt een gekoppelde betaling"
-" gecreëerd. Ze verwijzen via dit veld"
+" gemaakt. Ze verwijzen via dit veld"
 
 #. module: account
 #: model_terms:ir.actions.act_window,help:account.action_move_in_receipt_type
